@@ -1,0 +1,1155 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>План подготовки к операции — Тазобедренный сустав</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=IBM+Plex+Sans:wght@300;400;600&family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0e0f13;
+    --surface: #16181f;
+    --surface2: #1e2029;
+    --border: #2a2d3a;
+    --text: #e2e4ec;
+    --muted: #7a7f96;
+    --phase1: #3b82f6;
+    --phase2: #f59e0b;
+    --phase3: #ef4444;
+    --green: #22c55e;
+    --accent: #e2e4ec;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: var(--bg); color: var(--text); font-family: 'IBM Plex Sans', sans-serif; font-weight: 300; min-height: 100vh; padding-bottom: 60px; }
+
+  header { background: var(--surface); border-bottom: 1px solid var(--border); padding: 32px 40px 24px; position: relative; overflow: hidden; }
+  header::before { content: ''; position: absolute; top: -60px; right: -60px; width: 300px; height: 300px; border-radius: 50%; background: radial-gradient(circle, rgba(59,130,246,0.12) 0%, transparent 70%); pointer-events: none; }
+  .header-label { font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 3px; color: var(--muted); text-transform: uppercase; margin-bottom: 8px; }
+  header h1 { font-family: 'Bebas Neue', sans-serif; font-size: clamp(36px, 5vw, 62px); letter-spacing: 2px; line-height: 1; color: var(--accent); }
+  header h1 span { color: var(--phase1); }
+  .header-sub { margin-top: 10px; font-size: 13px; color: var(--muted); max-width: 600px; line-height: 1.6; }
+  .warning-box { margin-top: 18px; background: rgba(239,68,68,0.08); border: 1px solid rgba(239,68,68,0.25); border-radius: 8px; padding: 12px 16px; font-size: 12px; color: #fca5a5; line-height: 1.6; max-width: 700px; }
+  .warning-box strong { color: #ef4444; }
+
+  .tabs-wrapper { padding: 28px 40px 0; border-bottom: 1px solid var(--border); background: var(--surface); display: flex; gap: 4px; position: sticky; top: 0; z-index: 100; }
+  .tab-btn { padding: 12px 24px; background: transparent; border: none; border-bottom: 3px solid transparent; cursor: pointer; font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: 1px; text-transform: uppercase; color: var(--muted); transition: all 0.2s; position: relative; bottom: -1px; display: flex; align-items: center; gap: 8px; }
+  .tab-btn:hover { color: var(--text); }
+  .tab-btn.active-1 { color: var(--phase1); border-bottom-color: var(--phase1); background: rgba(59,130,246,0.05); border-radius: 6px 6px 0 0; }
+  .tab-btn.active-2 { color: var(--phase2); border-bottom-color: var(--phase2); background: rgba(245,158,11,0.05); border-radius: 6px 6px 0 0; }
+  .tab-btn.active-3 { color: var(--phase3); border-bottom-color: var(--phase3); background: rgba(239,68,68,0.05); border-radius: 6px 6px 0 0; }
+
+  .phase-panel { display: none; padding: 36px 40px; }
+  .phase-panel.active { display: block; }
+
+  .phase-header { display: flex; align-items: flex-start; gap: 20px; margin-bottom: 32px; }
+  .phase-badge { font-family: 'Bebas Neue', sans-serif; font-size: 64px; line-height: 1; opacity: 0.15; min-width: 60px; }
+  .phase-1 .phase-badge { color: var(--phase1); }
+  .phase-2 .phase-badge { color: var(--phase2); }
+  .phase-3 .phase-badge { color: var(--phase3); }
+  .phase-title-block h2 { font-family: 'Bebas Neue', sans-serif; font-size: 32px; letter-spacing: 2px; margin-bottom: 4px; }
+  .phase-1 .phase-title-block h2 { color: var(--phase1); }
+  .phase-2 .phase-title-block h2 { color: var(--phase2); }
+  .phase-3 .phase-title-block h2 { color: var(--phase3); }
+  .phase-title-block .phase-desc { font-size: 13px; color: var(--muted); line-height: 1.6; max-width: 600px; }
+  .phase-title-block .duration-tag { display: inline-block; margin-top: 8px; padding: 3px 10px; border-radius: 20px; font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 1px; background: var(--surface2); border: 1px solid var(--border); color: var(--muted); }
+
+  .section-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 20px; margin-bottom: 28px; }
+  .card { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; overflow: hidden; transition: border-color 0.2s; }
+  .card:hover { border-color: #3a3f55; }
+  .card-header { padding: 14px 18px; display: flex; align-items: center; gap: 12px; border-bottom: 1px solid var(--border); }
+  .card-icon { width: 36px; height: 36px; border-radius: 8px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+  .card-icon svg { width: 24px; height: 24px; display: block; }
+  .icon-pool { background: rgba(59,130,246,0.15); }
+  .icon-gym  { background: rgba(245,158,11,0.15); }
+  .icon-sauna{ background: rgba(239,68,68,0.12); }
+  .icon-schedule { background: rgba(34,197,94,0.12); }
+  .icon-warn { background: rgba(239,68,68,0.12); }
+  .icon-tip  { background: rgba(34,197,94,0.12); }
+  .card-header h3 { font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: 1px; text-transform: uppercase; color: var(--text); }
+  .card-header .card-sub { font-size: 11px; color: var(--muted); margin-top: 2px; }
+  .card-body { padding: 16px 18px; }
+
+  .exercise-item { display: flex; gap: 14px; padding: 10px 0; border-bottom: 1px solid rgba(255,255,255,0.04); }
+  .exercise-item:last-child { border-bottom: none; padding-bottom: 0; }
+  .ex-visual { width: 56px; height: 56px; border-radius: 8px; background: var(--surface2); border: 1px solid var(--border); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+  .ex-visual svg { width: 38px; height: 38px; display: block; }
+  .ex-info { flex: 1; }
+  .ex-name { font-size: 13px; font-weight: 600; color: var(--text); margin-bottom: 3px; }
+  .ex-detail { font-size: 11px; color: var(--muted); line-height: 1.5; }
+  .ex-params { display: flex; gap: 8px; margin-top: 5px; flex-wrap: wrap; }
+  .param-tag { padding: 2px 8px; border-radius: 4px; font-family: 'IBM Plex Mono', monospace; font-size: 10px; background: var(--surface2); border: 1px solid var(--border); color: var(--muted); }
+  .param-tag.highlight { color: var(--green); border-color: rgba(34,197,94,0.3); background: rgba(34,197,94,0.06); }
+
+  .info-list { list-style: none; }
+  .info-list li { padding: 7px 0; font-size: 13px; color: var(--text); border-bottom: 1px solid rgba(255,255,255,0.04); display: flex; align-items: flex-start; gap: 8px; line-height: 1.5; }
+  .info-list li:last-child { border-bottom: none; }
+  .info-list li::before { content: '—'; color: var(--muted); flex-shrink: 0; margin-top: 1px; }
+  .info-list li.danger::before { content: '✕'; color: var(--phase3); }
+  .info-list li.ok::before { content: '✓'; color: var(--green); }
+
+  .schedule-table { width: 100%; border-collapse: collapse; font-size: 12px; }
+  .schedule-table th { font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: 1px; text-transform: uppercase; color: var(--muted); padding: 6px 10px; text-align: left; border-bottom: 1px solid var(--border); }
+  .schedule-table td { padding: 8px 10px; border-bottom: 1px solid rgba(255,255,255,0.04); color: var(--text); vertical-align: top; line-height: 1.5; }
+  .schedule-table tr:last-child td { border-bottom: none; }
+  .day-tag { display: inline-block; padding: 2px 8px; border-radius: 4px; font-family: 'IBM Plex Mono', monospace; font-size: 10px; font-weight: 600; white-space: nowrap; }
+  .day-active { background: rgba(59,130,246,0.15); color: var(--phase1); }
+  .day-rest { background: rgba(34,197,94,0.1); color: var(--green); }
+  .day-active-2 { background: rgba(245,158,11,0.15); color: var(--phase2); }
+  .day-active-3 { background: rgba(239,68,68,0.12); color: var(--phase3); }
+
+  .progress-block { margin-bottom: 28px; }
+  .progress-label { display: flex; justify-content: space-between; font-size: 11px; color: var(--muted); margin-bottom: 6px; font-family: 'IBM Plex Mono', monospace; }
+  .progress-bar { height: 4px; background: var(--surface2); border-radius: 2px; overflow: hidden; }
+  .progress-fill { height: 100%; border-radius: 2px; }
+  .fill-1 { background: var(--phase1); width: 33%; }
+  .fill-2 { background: var(--phase2); width: 66%; }
+  .fill-3 { background: var(--phase3); width: 100%; }
+  .full-card { grid-column: 1 / -1; }
+
+  .sauna-row { display: flex; gap: 12px; align-items: center; padding: 8px 0; border-bottom: 1px solid rgba(255,255,255,0.04); }
+  .sauna-row:last-child { border-bottom: none; }
+  .sauna-num { font-family: 'Bebas Neue', sans-serif; font-size: 28px; color: var(--phase3); opacity: 0.5; width: 30px; flex-shrink: 0; text-align: center; }
+  .sauna-text { font-size: 12px; color: var(--text); line-height: 1.5; }
+  .sauna-time { font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: var(--muted); }
+
+  .targets-row { display: grid; grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); gap: 12px; margin-bottom: 28px; }
+  .target-card { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 14px; text-align: center; }
+  .target-val { font-family: 'Bebas Neue', sans-serif; font-size: 32px; line-height: 1; margin-bottom: 4px; }
+  .target-label { font-size: 11px; color: var(--muted); line-height: 1.4; }
+
+  .timeline-block { background: var(--surface2); border: 1px solid var(--border); border-radius: 10px; padding: 14px 16px; margin-bottom: 20px; }
+  .timeline-title { font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: 2px; color: var(--muted); text-transform: uppercase; margin-bottom: 10px; }
+  .timeline-row { display: flex; align-items: center; gap: 8px; margin-bottom: 6px; }
+  .tl-label { font-size: 10px; color: var(--muted); font-family: 'IBM Plex Mono', monospace; width: 36px; flex-shrink: 0; }
+  .tl-bar-wrap { flex: 1; display: flex; gap: 2px; height: 18px; }
+  .tl-seg { border-radius: 3px; display: flex; align-items: center; justify-content: center; font-size: 9px; font-family: 'IBM Plex Mono', monospace; color: rgba(255,255,255,0.7); white-space: nowrap; overflow: hidden; padding: 0 4px; }
+  .tl-pool   { background: rgba(59,130,246,0.5); }
+  .tl-gym    { background: rgba(245,158,11,0.5); }
+  .tl-sauna  { background: rgba(239,68,68,0.4); }
+  .tl-rest   { background: rgba(122,127,150,0.15); border: 1px solid var(--border); color: var(--muted); }
+  .tl-bike   { background: rgba(168,85,247,0.4); }
+  .tl-walk   { background: rgba(34,197,94,0.35); }
+  .tl-total  { font-family: 'IBM Plex Mono', monospace; font-size: 10px; color: var(--green); width: 50px; text-align: right; flex-shrink: 0; }
+
+  @media (max-width: 600px) {
+    header, .tabs-wrapper, .phase-panel { padding-left: 20px; padding-right: 20px; }
+    .phase-badge { font-size: 40px; }
+    .section-grid { grid-template-columns: 1fr; }
+    .targets-row { grid-template-columns: 1fr 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ═══ STICK-FIGURE SVG ICONS ═══ -->
+<svg style="display:none" xmlns="http://www.w3.org/2000/svg">
+
+  <!-- WALK IN WATER -->
+  <symbol id="ico-walk-water" viewBox="0 0 40 40">
+    <circle cx="19" cy="5" r="3.2" fill="currentColor"/>
+    <line x1="19" y1="8.2" x2="19" y2="19" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/>
+    <line x1="19" y1="13" x2="10" y2="17" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/>
+    <line x1="19" y1="13" x2="28" y2="17" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/>
+    <line x1="19" y1="19" x2="13" y2="27" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/>
+    <line x1="13" y1="27" x2="11" y2="33" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/>
+    <line x1="19" y1="19" x2="26" y2="25" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/>
+    <line x1="26" y1="25" x2="29" y2="31" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/>
+    <path d="M5 35 Q9 32 13 35 Q17 38 21 35 Q25 32 29 35 Q33 38 37 35" stroke="#3b82f6" stroke-width="1.8" fill="none" stroke-linecap="round"/>
+  </symbol>
+
+  <!-- SWIM (horizontal, arms stretched) -->
+  <symbol id="ico-swim" viewBox="0 0 40 40">
+    <circle cx="7" cy="16" r="3.2" fill="currentColor"/>
+    <line x1="10" y1="16" x2="25" y2="18" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/>
+    <line x1="25" y1="18" x2="36" y2="13" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/>
+    <line x1="17" y1="17" x2="12" y2="25" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/>
+    <line x1="25" y1="18" x2="33" y2="22" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/>
+    <line x1="25" y1="18" x2="34" y2="16" stroke="currentColor" stroke-width="2" stroke-linecap="round" opacity="0.4"/>
+    <path d="M3 27 Q7 24 11 27 Q15 30 19 27 Q23 24 27 27 Q31 30 35 27" stroke="#3b82f6" stroke-width="1.8" fill="none" stroke-linecap="round"/>
+  </symbol>
+
+  <!-- LEG SWING at wall -->
+  <symbol id="ico-leg-swing" viewBox="0 0 40 40">
+    <line x1="6" y1="3" x2="6" y2="38" stroke="#3b82f6" stroke-width="2.2" stroke-linecap="round"/>
+    <circle cx="18" cy="6" r="3.2" fill="currentColor"/>
+    <line x1="18" y1="9.2" x2="18" y2="21" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/>
+    <line x1="18" y1="14" x2="9" y2="14" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/>
+    <line x1="18" y1="14" x2="26" y2="17" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/>
+    <line x1="18" y1="21" x2="16" y2="32" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/>
+    <line x1="16" y1="32" x2="14" y2="37" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/>
+    <line x1="18" y1="21" x2="29" y2="16" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/>
+    <line x1="29" y1="16" x2="35" y2="19" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/>
+  </symbol>
+
+  <!-- SAUNA/HAMMAM (seated, steam) -->
+  <symbol id="ico-sauna" viewBox="0 0 40 40">
+    <path d="M14 9 Q15.5 6 14 3" stroke="currentColor" stroke-width="1.8" fill="none" stroke-linecap="round" opacity="0.6"/>
+    <path d="M20 9 Q21.5 6 20 3" stroke="currentColor" stroke-width="1.8" fill="none" stroke-linecap="round" opacity="0.6"/>
+    <path d="M26 9 Q27.5 6 26 3" stroke="currentColor" stroke-width="1.8" fill="none" stroke-linecap="round" opacity="0.6"/>
+    <circle cx="20" cy="13" r="3.2" fill="currentColor"/>
+    <line x1="20" y1="16.2" x2="20" y2="26" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/>
+    <line x1="20" y1="20" x2="13" y2="24" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/>
+    <line x1="20" y1="20" x2="27" y2="24" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/>
+    <line x1="10" y1="30" x2="30" y2="30" stroke="currentColor" stroke-width="2" stroke-linecap="round" opacity="0.5"/>
+    <line x1="20" y1="26" x2="15" y2="30" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/>
+    <line x1="20" y1="26" x2="25" y2="30" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/>
+  </symbol>
+
+  <!-- WARMUP (arms raised V) -->
+  <symbol id="ico-warmup" viewBox="0 0 40 40">
+    <circle cx="20" cy="5" r="3.2" fill="currentColor"/>
+    <line x1="20" y1="8.2" x2="20" y2="21" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/>
+    <line x1="20" y1="13" x2="10" y2="7" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/>
+    <line x1="20" y1="13" x2="30" y2="7" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/>
+    <line x1="20" y1="21" x2="15" y2="32" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/>
+    <line x1="15" y1="32" x2="13" y2="37" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/>
+    <line x1="20" y1="21" x2="25" y2="32" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/>
+    <line x1="25" y1="32" x2="27" y2="37" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/>
+  </symbol>
+
+  <!-- ROWING MACHINE (seated, leaning back, pulling handle) -->
+  <symbol id="ico-rowing" viewBox="0 0 40 40">
+    <line x1="4" y1="33" x2="36" y2="33" stroke="currentColor" stroke-width="2" stroke-linecap="round" opacity="0.4"/>
+    <circle cx="28" cy="17" r="3.2" fill="currentColor"/>
+    <line x1="28" y1="20.2" x2="21" y2="27" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/>
+    <line x1="22" y1="24" x2="11" y2="22" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/>
+    <line x1="9" y1="20" x2="9" y2="24" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+    <line x1="21" y1="27" x2="13" y2="31" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/>
+    <line x1="21" y1="27" x2="16" y2="33" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/>
+  </symbol>
+
+  <!-- BENCH PRESS (lying, arms pushing bar) -->
+  <symbol id="ico-bench-press" viewBox="0 0 40 40">
+    <line x1="6" y1="12" x2="34" y2="12" stroke="currentColor" stroke-width="2" stroke-linecap="round" opacity="0.7"/>
+    <rect x="3" y="10" width="4" height="5" rx="1" fill="currentColor"/>
+    <rect x="33" y="10" width="4" height="5" rx="1" fill="currentColor"/>
+    <circle cx="20" cy="22" r="3.2" fill="currentColor"/>
+    <line x1="20" y1="25.2" x2="33" y2="25" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/>
+    <line x1="20" y1="23" x2="14" y2="14" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/>
+    <line x1="20" y1="23" x2="26" y2="14" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/>
+    <line x1="33" y1="25" x2="35" y2="32" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/>
+    <line x1="33" y1="25" x2="31" y2="32" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/>
+    <line x1="6" y1="27" x2="38" y2="27" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" opacity="0.25"/>
+  </symbol>
+
+  <!-- RECUMBENT BIKE -->
+  <symbol id="ico-bike" viewBox="0 0 40 40">
+    <circle cx="9" cy="30" r="5.5" fill="none" stroke="currentColor" stroke-width="2"/>
+    <circle cx="31" cy="30" r="5.5" fill="none" stroke="currentColor" stroke-width="2"/>
+    <line x1="9" y1="30" x2="31" y2="30" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" opacity="0.4"/>
+    <line x1="20" y1="24" x2="9" y2="30" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+    <line x1="20" y1="24" x2="31" y2="30" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+    <line x1="7" y1="21" x2="19" y2="23" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" opacity="0.5"/>
+    <circle cx="7" cy="17" r="3.2" fill="currentColor"/>
+    <line x1="9" y1="19" x2="21" y2="23" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/>
+    <line x1="21" y1="23" x2="26" y2="27" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/>
+    <line x1="26" y1="27" x2="20" y2="30" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/>
+  </symbol>
+
+  <!-- LAT PULLDOWN (seated, arms up gripping bar) -->
+  <symbol id="ico-pulldown" viewBox="0 0 40 40">
+    <line x1="20" y1="2" x2="20" y2="9" stroke="currentColor" stroke-width="1.5" opacity="0.4" stroke-linecap="round"/>
+    <line x1="10" y1="9" x2="30" y2="9" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/>
+    <circle cx="20" cy="16" r="3.2" fill="currentColor"/>
+    <line x1="20" y1="19.2" x2="20" y2="29" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/>
+    <line x1="20" y1="22" x2="12" y2="12" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/>
+    <line x1="20" y1="22" x2="28" y2="12" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/>
+    <line x1="20" y1="29" x2="13" y2="34" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/>
+    <line x1="13" y1="34" x2="8" y2="35" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/>
+    <line x1="20" y1="29" x2="27" y2="34" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/>
+    <line x1="27" y1="34" x2="32" y2="35" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/>
+  </symbol>
+
+  <!-- LEG EXTENSION (seated, one leg straight out) -->
+  <symbol id="ico-leg-ext" viewBox="0 0 40 40">
+    <line x1="6" y1="10" x2="6" y2="28" stroke="currentColor" stroke-width="2" opacity="0.35" stroke-linecap="round"/>
+    <line x1="6" y1="24" x2="22" y2="24" stroke="currentColor" stroke-width="2" opacity="0.35" stroke-linecap="round"/>
+    <circle cx="12" cy="7" r="3.2" fill="currentColor"/>
+    <line x1="12" y1="10.2" x2="12" y2="22" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/>
+    <line x1="12" y1="16" x2="6" y2="19" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/>
+    <line x1="12" y1="16" x2="18" y2="19" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/>
+    <line x1="12" y1="22" x2="16" y2="30" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/>
+    <line x1="12" y1="22" x2="22" y2="21" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/>
+    <line x1="22" y1="21" x2="33" y2="23" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/>
+    <rect x="31" y="21" width="5" height="5" rx="1" fill="currentColor" opacity="0.6"/>
+  </symbol>
+
+  <!-- GLUTE BRIDGE (lying, hips raised) -->
+  <symbol id="ico-glute" viewBox="0 0 40 40">
+    <line x1="3" y1="37" x2="37" y2="37" stroke="currentColor" stroke-width="1.5" opacity="0.25" stroke-linecap="round"/>
+    <circle cx="6" cy="31" r="3.2" fill="currentColor"/>
+    <line x1="9" y1="31" x2="18" y2="31" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/>
+    <line x1="12" y1="31" x2="10" y2="37" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+    <line x1="16" y1="31" x2="18" y2="37" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+    <line x1="18" y1="31" x2="24" y2="20" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/>
+    <line x1="24" y1="20" x2="31" y2="30" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/>
+    <line x1="31" y1="30" x2="33" y2="37" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/>
+    <line x1="24" y1="20" x2="29" y2="29" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" opacity="0.45"/>
+    <line x1="29" y1="29" x2="31" y2="36" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" opacity="0.45"/>
+  </symbol>
+
+  <!-- AQUA AEROBICS (in water, arms out, running) -->
+  <symbol id="ico-aqua" viewBox="0 0 40 40">
+    <circle cx="20" cy="6" r="3.2" fill="currentColor"/>
+    <line x1="20" y1="9.2" x2="20" y2="21" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/>
+    <line x1="20" y1="14" x2="10" y2="11" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/>
+    <line x1="20" y1="14" x2="30" y2="11" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/>
+    <path d="M4 25 Q8 22 12 25 Q16 28 20 25 Q24 22 28 25 Q32 28 36 25" stroke="#3b82f6" stroke-width="1.8" fill="none" stroke-linecap="round"/>
+    <line x1="20" y1="21" x2="13" y2="29" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" opacity="0.5"/>
+    <line x1="13" y1="29" x2="11" y2="34" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" opacity="0.5"/>
+    <line x1="20" y1="21" x2="27" y2="27" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" opacity="0.5"/>
+    <line x1="27" y1="27" x2="30" y2="33" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" opacity="0.5"/>
+  </symbol>
+
+  <!-- INTERVAL SWIM (swimmer + speed lines) -->
+  <symbol id="ico-interval-swim" viewBox="0 0 40 40">
+    <line x1="3" y1="14" x2="7" y2="14" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" opacity="0.5"/>
+    <line x1="3" y1="18" x2="6" y2="18" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" opacity="0.35"/>
+    <line x1="3" y1="22" x2="7" y2="22" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" opacity="0.5"/>
+    <circle cx="11" cy="16" r="3.2" fill="currentColor"/>
+    <line x1="14" y1="16" x2="27" y2="18" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/>
+    <line x1="27" y1="18" x2="37" y2="13" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/>
+    <line x1="19" y1="17" x2="14" y2="25" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/>
+    <line x1="27" y1="18" x2="35" y2="22" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/>
+    <path d="M3 28 Q7 25 11 28 Q15 31 19 28 Q23 25 27 28 Q31 31 35 28" stroke="#3b82f6" stroke-width="1.8" fill="none" stroke-linecap="round"/>
+  </symbol>
+
+  <!-- CABLE ROW seated -->
+  <symbol id="ico-cable-row" viewBox="0 0 40 40">
+    <rect x="33" y="10" width="4" height="20" rx="1" fill="currentColor" opacity="0.3"/>
+    <line x1="33" y1="20" x2="22" y2="22" stroke="currentColor" stroke-width="1.5" opacity="0.4" stroke-linecap="round"/>
+    <circle cx="9" cy="12" r="3.2" fill="currentColor"/>
+    <line x1="9" y1="15.2" x2="11" y2="25" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/>
+    <line x1="10" y1="21" x2="22" y2="22" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/>
+    <line x1="11" y1="25" x2="9" y2="32" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/>
+    <line x1="9" y1="32" x2="6" y2="36" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/>
+    <line x1="11" y1="25" x2="16" y2="31" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/>
+    <line x1="16" y1="31" x2="18" y2="36" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/>
+    <line x1="5" y1="29" x2="21" y2="29" stroke="currentColor" stroke-width="1.8" opacity="0.3" stroke-linecap="round"/>
+  </symbol>
+
+  <!-- LEG ABDUCTION standing -->
+  <symbol id="ico-leg-abduct" viewBox="0 0 40 40">
+    <circle cx="20" cy="5" r="3.2" fill="currentColor"/>
+    <line x1="20" y1="8.2" x2="20" y2="20" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/>
+    <line x1="20" y1="14" x2="12" y2="17" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/>
+    <line x1="20" y1="14" x2="28" y2="17" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/>
+    <line x1="20" y1="20" x2="16" y2="31" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/>
+    <line x1="16" y1="31" x2="14" y2="37" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/>
+    <line x1="20" y1="20" x2="33" y2="23" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/>
+    <line x1="33" y1="23" x2="37" y2="28" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/>
+  </symbol>
+
+  <!-- CALENDAR icon (card icon, not exercise) -->
+  <symbol id="ico-cal" viewBox="0 0 24 24">
+    <rect x="3" y="4" width="18" height="17" rx="2" fill="none" stroke="currentColor" stroke-width="1.8"/>
+    <line x1="3" y1="9" x2="21" y2="9" stroke="currentColor" stroke-width="1.5"/>
+    <line x1="8" y1="2" x2="8" y2="6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+    <line x1="16" y1="2" x2="16" y2="6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+    <rect x="7" y="13" width="3" height="3" rx="0.5" fill="currentColor"/>
+    <rect x="14" y="13" width="3" height="3" rx="0.5" fill="currentColor"/>
+  </symbol>
+
+  <!-- STOP/WARN circle X -->
+  <symbol id="ico-stop" viewBox="0 0 24 24">
+    <circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="2"/>
+    <line x1="15" y1="9" x2="9" y2="15" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+    <line x1="9" y1="9" x2="15" y2="15" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+  </symbol>
+
+  <!-- TIP checkmark -->
+  <symbol id="ico-check" viewBox="0 0 24 24">
+    <circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="1.8"/>
+    <path d="M8 12l3 3 5-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  </symbol>
+
+  <!-- FOOD plate -->
+  <symbol id="ico-food" viewBox="0 0 24 24">
+    <circle cx="12" cy="13" r="7" fill="none" stroke="currentColor" stroke-width="1.8"/>
+    <line x1="12" y1="4" x2="12" y2="6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+    <path d="M9 10h6M12 8v6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+  </symbol>
+
+  <!-- THERMOMETER sauna card icon -->
+  <symbol id="ico-thermo" viewBox="0 0 24 24">
+    <path d="M14 14V5a2 2 0 00-4 0v9a4 4 0 104 0z" fill="none" stroke="currentColor" stroke-width="1.8"/>
+    <circle cx="12" cy="17" r="2" fill="currentColor"/>
+    <line x1="12" y1="9" x2="12" y2="15" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+    <line x1="17" y1="6" x2="19" y2="5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" opacity="0.6"/>
+    <line x1="17" y1="9" x2="20" y2="9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" opacity="0.6"/>
+  </symbol>
+
+  <!-- POOL swimmer card icon -->
+  <symbol id="ico-pool-card" viewBox="0 0 24 24">
+    <circle cx="19" cy="5" r="2" fill="currentColor"/>
+    <path d="M17 13l-4-4-3 2-3-1" stroke="currentColor" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M2 18c1.5 0 2.5-.8 3.5-.8S7.5 18 9 18s2.5-.8 3.5-.8S14.5 18 16 18s2.5-.8 3.5-.8S21.5 18 22 18" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+  </symbol>
+
+  <!-- GYM dumbbell card icon -->
+  <symbol id="ico-gym-card" viewBox="0 0 24 24">
+    <rect x="2" y="10" width="3" height="4" rx="1" fill="currentColor"/>
+    <rect x="5" y="8" width="2" height="8" rx="1" fill="currentColor"/>
+    <rect x="7" y="11" width="10" height="2" rx="1" fill="currentColor"/>
+    <rect x="17" y="8" width="2" height="8" rx="1" fill="currentColor"/>
+    <rect x="19" y="10" width="3" height="4" rx="1" fill="currentColor"/>
+  </symbol>
+
+</svg>
+
+<header>
+  <div class="header-label">Предоперационная подготовка · Тазобедренный сустав</div>
+  <h1>ПЛАН <span>ТРЕНИРОВОК</span></h1>
+  <div class="header-sub">Протрузия левого тазобедренного сустава · Подготовка к эндопротезированию<br>
+  Инструменты: бассейн, тренажёры, хамам, сауна · Лишний вес ~20–30 кг</div>
+  <div class="warning-box">
+    <strong>⚠ Важно:</strong> Этот план — ориентир, не медицинское предписание. Перед началом проконсультируйтесь с лечащим врачом или реабилитологом. При усилении боли в суставе — немедленно прекратить упражнение.
+  </div>
+</header>
+
+<div class="tabs-wrapper">
+  <button class="tab-btn active-1" onclick="switchTab(1)">
+    <svg width="10" height="10" viewBox="0 0 10 10"><circle cx="5" cy="5" r="4.5" fill="#3b82f6"/></svg>
+    Фаза 1 — Щадящая
+  </button>
+  <button class="tab-btn" onclick="switchTab(2)">
+    <svg width="10" height="10" viewBox="0 0 10 10"><circle cx="5" cy="5" r="4.5" fill="#f59e0b"/></svg>
+    Фаза 2 — Средняя
+  </button>
+  <button class="tab-btn" onclick="switchTab(3)">
+    <svg width="10" height="10" viewBox="0 0 10 10"><circle cx="5" cy="5" r="4.5" fill="#ef4444"/></svg>
+    Фаза 3 — Нагрузочная
+  </button>
+</div>
+
+<!-- ═══ ФАЗА 1 ═══ -->
+<div class="phase-panel phase-1 active" id="panel-1">
+  <div class="progress-block">
+    <div class="progress-label"><span>Интенсивность</span><span>33%</span></div>
+    <div class="progress-bar"><div class="progress-fill fill-1"></div></div>
+  </div>
+  <div class="phase-header">
+    <div class="phase-badge">1</div>
+    <div class="phase-title-block">
+      <h2>ЩАДЯЩАЯ ФАЗА</h2>
+      <div class="phase-desc">Цель: запустить процесс жиросжигания, укрепить мышцы без нагрузки на сустав, улучшить кровообращение, вывести лишнюю воду. Движение — только безболезненное.</div>
+      <div class="duration-tag">ПРОДОЛЖИТЕЛЬНОСТЬ: 3–5 НЕДЕЛЬ · 2 ЧАСА НА СЕССИЮ</div>
+    </div>
+  </div>
+
+  <div class="timeline-block">
+    <div class="timeline-title">Тайминг тренировки — 120 мин</div>
+    <div class="timeline-row">
+      <div class="tl-label">ПН/ПТ</div>
+      <div class="tl-bar-wrap">
+        <div class="tl-seg tl-pool" style="flex:25">Вода 25′</div>
+        <div class="tl-seg tl-pool" style="flex:30">Плавание 30′</div>
+        <div class="tl-seg tl-pool" style="flex:25">Махи 25′</div>
+        <div class="tl-seg tl-sauna" style="flex:25">Хамам 25′</div>
+        <div class="tl-seg tl-rest" style="flex:15">Душ 15′</div>
+      </div>
+      <div class="tl-total">120′</div>
+    </div>
+    <div class="timeline-row">
+      <div class="tl-label">СР</div>
+      <div class="tl-bar-wrap">
+        <div class="tl-seg tl-gym" style="flex:15">Разм. 15′</div>
+        <div class="tl-seg tl-gym" style="flex:25">Гребной 25′</div>
+        <div class="tl-seg tl-gym" style="flex:30">Жим сидя 30′</div>
+        <div class="tl-seg tl-bike" style="flex:25">Вело 25′</div>
+        <div class="tl-seg tl-sauna" style="flex:25">Хамам 25′</div>
+      </div>
+      <div class="tl-total">120′</div>
+    </div>
+  </div>
+
+  <div class="targets-row">
+    <div class="target-card"><div class="target-val" style="color:var(--phase1)">3×</div><div class="target-label">тренировки в неделю</div></div>
+    <div class="target-card"><div class="target-val" style="color:var(--green)">120</div><div class="target-label">минут за сессию</div></div>
+    <div class="target-card"><div class="target-val" style="color:var(--phase2)">−2–4</div><div class="target-label">кг в месяц (реально)</div></div>
+    <div class="target-card"><div class="target-val" style="color:var(--muted)">2</div><div class="target-label">дня отдыха подряд обязательны</div></div>
+  </div>
+
+  <div class="section-grid">
+
+    <div class="card">
+      <div class="card-header">
+        <div class="card-icon icon-pool"><svg width="24" height="24"><use href="#ico-pool-card" color="#3b82f6"/></svg></div>
+        <div><h3>Бассейн</h3><div class="card-sub">Основа фазы — вода снимает нагрузку с сустава</div></div>
+      </div>
+      <div class="card-body">
+        <div class="exercise-item">
+          <div class="ex-visual"><svg><use href="#ico-walk-water" color="#7a7f96"/></svg></div>
+          <div class="ex-info">
+            <div class="ex-name">Ходьба в воде + разминка</div>
+            <div class="ex-detail">Шагаем по дну бассейна вперёд, назад, боком. Вода по грудь — снижает нагрузку на сустав на ~80%. Включает разминку суставов рук и плеч в воде.</div>
+            <div class="ex-params">
+              <span class="param-tag highlight">25 мин</span>
+              <span class="param-tag">медленный темп</span>
+              <span class="param-tag">без рывков</span>
+            </div>
+          </div>
+        </div>
+        <div class="exercise-item">
+          <div class="ex-visual"><svg><use href="#ico-swim" color="#7a7f96"/></svg></div>
+          <div class="ex-info">
+            <div class="ex-name">Плавание на спине или кролем (руки)</div>
+            <div class="ex-detail">Если боль не позволяет работать ногами — плывём на руках с колобашкой между ног. Ноги зафиксированы, не участвуют.</div>
+            <div class="ex-params">
+              <span class="param-tag highlight">30 мин</span>
+              <span class="param-tag">колобашка</span>
+            </div>
+          </div>
+        </div>
+        <div class="exercise-item">
+          <div class="ex-visual"><svg><use href="#ico-leg-swing" color="#7a7f96"/></svg></div>
+          <div class="ex-info">
+            <div class="ex-name">Маховые движения ногой в воде</div>
+            <div class="ex-detail">Держась за бортик: лёгкие махи вперёд-назад больной ногой. Амплитуда — только до боли, не через боль.</div>
+            <div class="ex-params">
+              <span class="param-tag highlight">25 мин · 2×10 повт.</span>
+              <span class="param-tag">мягко</span>
+              <span class="param-tag">стоя у бортика</span>
+            </div>
+          </div>
+        </div>
+        <div class="exercise-item">
+          <div class="ex-visual"><svg><use href="#ico-sauna" color="#7a7f96"/></svg></div>
+          <div class="ex-info">
+            <div class="ex-name">Хамам после бассейна</div>
+            <div class="ex-detail">Снимает усталость мышц, уменьшает отёк вокруг сустава. Плюс переодевание/душ — учитывается в тайминге.</div>
+            <div class="ex-params">
+              <span class="param-tag highlight">25 мин + 15 мин душ/отдых</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-header">
+        <div class="card-icon icon-gym"><svg width="24" height="24"><use href="#ico-gym-card" color="#f59e0b"/></svg></div>
+        <div><h3>Тренажёрный зал</h3><div class="card-sub">Верхняя часть тела + разгрузка сустава</div></div>
+      </div>
+      <div class="card-body">
+        <div class="exercise-item">
+          <div class="ex-visual"><svg><use href="#ico-warmup" color="#7a7f96"/></svg></div>
+          <div class="ex-info">
+            <div class="ex-name">Разминка и суставная гимнастика</div>
+            <div class="ex-detail">Вращения плечами, наклоны корпуса, лёгкие потяжки. Подготовка к нагрузке, разогрев сустава.</div>
+            <div class="ex-params"><span class="param-tag highlight">15 мин</span></div>
+          </div>
+        </div>
+        <div class="exercise-item">
+          <div class="ex-visual"><svg><use href="#ico-rowing" color="#7a7f96"/></svg></div>
+          <div class="ex-info">
+            <div class="ex-name">Гребной тренажёр (руки)</div>
+            <div class="ex-detail">Сидя — нагрузка на плечи, спину, руки. Ноги почти не задействованы. Кардио без нагрузки на сустав.</div>
+            <div class="ex-params">
+              <span class="param-tag highlight">25 мин</span>
+              <span class="param-tag">умеренный темп</span>
+            </div>
+          </div>
+        </div>
+        <div class="exercise-item">
+          <div class="ex-visual"><svg><use href="#ico-bench-press" color="#7a7f96"/></svg></div>
+          <div class="ex-info">
+            <div class="ex-name">Жим сидя (грудь, плечи)</div>
+            <div class="ex-detail">Тренажёры для верха тела сидя. Позволяют работать без нагрузки на ноги. Умеренный вес.</div>
+            <div class="ex-params">
+              <span class="param-tag highlight">30 мин · 3×12–15</span>
+              <span class="param-tag">лёгкий вес</span>
+            </div>
+          </div>
+        </div>
+        <div class="exercise-item">
+          <div class="ex-visual"><svg><use href="#ico-bike" color="#7a7f96"/></svg></div>
+          <div class="ex-info">
+            <div class="ex-name">Велотренажёр (горизонтальный)</div>
+            <div class="ex-detail">Только горизонтальный (лежачий) — меньше нагрузка на сустав, чем вертикальный. Лёгкое сопротивление. Если появляется боль — стоп.</div>
+            <div class="ex-params">
+              <span class="param-tag highlight">25 мин</span>
+              <span class="param-tag">сопротивление 1–2</span>
+            </div>
+          </div>
+        </div>
+        <div class="exercise-item">
+          <div class="ex-visual"><svg><use href="#ico-sauna" color="#7a7f96"/></svg></div>
+          <div class="ex-info">
+            <div class="ex-name">Хамам + душ/отдых</div>
+            <div class="ex-detail">Финальный блок после тренажёров. Расслабляет мышцы спины и верха тела.</div>
+            <div class="ex-params"><span class="param-tag highlight">25 мин хамам + переодевание</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-header">
+        <div class="card-icon icon-schedule"><svg width="24" height="24"><use href="#ico-cal" color="#22c55e"/></svg></div>
+        <div><h3>Расписание недели</h3><div class="card-sub">Фаза 1 · 3 дня нагрузки · по 2 часа</div></div>
+      </div>
+      <div class="card-body">
+        <table class="schedule-table">
+          <thead><tr><th>День</th><th>Содержание</th><th>Время</th></tr></thead>
+          <tbody>
+            <tr><td><span class="day-tag day-active">ПН</span></td><td>Бассейн: разминка + плавание + махи у бортика + хамам</td><td style="color:var(--green);font-family:'IBM Plex Mono',monospace;font-size:11px">2 ч</td></tr>
+            <tr><td><span class="day-tag day-rest">ВТ</span></td><td>Отдых или лёгкая прогулка</td><td style="color:var(--muted);font-family:'IBM Plex Mono',monospace;font-size:11px">—</td></tr>
+            <tr><td><span class="day-tag day-active">СР</span></td><td>Тренажёры: разминка + гребной + жим + велосипед + хамам</td><td style="color:var(--green);font-family:'IBM Plex Mono',monospace;font-size:11px">2 ч</td></tr>
+            <tr><td><span class="day-tag day-rest">ЧТ</span></td><td>Отдых</td><td style="color:var(--muted);font-family:'IBM Plex Mono',monospace;font-size:11px">—</td></tr>
+            <tr><td><span class="day-tag day-active">ПТ</span></td><td>Бассейн: разминка + плавание + махи + хамам</td><td style="color:var(--green);font-family:'IBM Plex Mono',monospace;font-size:11px">2 ч</td></tr>
+            <tr><td><span class="day-tag day-rest">СБ</span></td><td>Отдых</td><td style="color:var(--muted);font-family:'IBM Plex Mono',monospace;font-size:11px">—</td></tr>
+            <tr><td><span class="day-tag day-rest">ВС</span></td><td>Отдых</td><td style="color:var(--muted);font-family:'IBM Plex Mono',monospace;font-size:11px">—</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-header">
+        <div class="card-icon icon-warn"><svg width="24" height="24"><use href="#ico-stop" color="#ef4444"/></svg></div>
+        <div><h3>Запрещено в Фазе 1</h3><div class="card-sub">Категорически</div></div>
+      </div>
+      <div class="card-body">
+        <ul class="info-list">
+          <li class="danger">Приседания любого вида</li>
+          <li class="danger">Выпады (lunges)</li>
+          <li class="danger">Беговая дорожка, эллипс с нагрузкой</li>
+          <li class="danger">Любые упражнения через боль в суставе</li>
+          <li class="danger">Вертикальный велотренажёр при боли</li>
+          <li class="danger">Свободные веса стоя (нагрузка на ноги)</li>
+          <li class="danger">Прыжки, ударная нагрузка</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-header">
+        <div class="card-icon icon-tip"><svg width="24" height="24"><use href="#ico-food" color="#22c55e"/></svg></div>
+        <div><h3>Питание — ключевые принципы</h3><div class="card-sub">Без фанатизма, с дефицитом</div></div>
+      </div>
+      <div class="card-body">
+        <ul class="info-list">
+          <li class="ok">Дефицит калорий ~300–400 ккал/день — не больше</li>
+          <li class="ok">Белок — минимум 1.5 г на кг веса (сохраняет мышцы)</li>
+          <li class="ok">Вода — 2+ литра в день (выводит отёки)</li>
+          <li class="ok">Ограничить соль — задерживает воду</li>
+          <li class="ok">Ограничить сахар и быстрые углеводы</li>
+          <li class="danger">Голодные диеты — сжигают мышцы, не жир</li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ═══ ФАЗА 2 ═══ -->
+<div class="phase-panel phase-2" id="panel-2">
+  <div class="progress-block">
+    <div class="progress-label"><span>Интенсивность</span><span>66%</span></div>
+    <div class="progress-bar"><div class="progress-fill fill-2"></div></div>
+  </div>
+  <div class="phase-header">
+    <div class="phase-badge">2</div>
+    <div class="phase-title-block">
+      <h2>СРЕДНЯЯ ФАЗА</h2>
+      <div class="phase-desc">Цель: активное жиросжигание, набор мышечной массы верха тела, осторожное подключение мышц ног. Нагрузка растёт — но сустав всё ещё под защитой.</div>
+      <div class="duration-tag">ПРОДОЛЖИТЕЛЬНОСТЬ: 4–6 НЕДЕЛЬ · 2 ЧАСА НА СЕССИЮ</div>
+    </div>
+  </div>
+
+  <div class="timeline-block">
+    <div class="timeline-title">Тайминг тренировки — 120 мин</div>
+    <div class="timeline-row">
+      <div class="tl-label">ПН/ПТ</div>
+      <div class="tl-bar-wrap">
+        <div class="tl-seg tl-pool" style="flex:15">Разм. 15′</div>
+        <div class="tl-seg tl-pool" style="flex:30">Плавание 30′</div>
+        <div class="tl-seg tl-pool" style="flex:25">Аква 25′</div>
+        <div class="tl-seg tl-walk" style="flex:15">Пояс 15′</div>
+        <div class="tl-seg tl-sauna" style="flex:25">Хамам 25′</div>
+        <div class="tl-seg tl-rest" style="flex:10">Душ 10′</div>
+      </div>
+      <div class="tl-total">120′</div>
+    </div>
+    <div class="timeline-row">
+      <div class="tl-label">СР/СБ</div>
+      <div class="tl-bar-wrap">
+        <div class="tl-seg tl-gym" style="flex:15">Разм. 15′</div>
+        <div class="tl-seg tl-gym" style="flex:20">Верх 20′</div>
+        <div class="tl-seg tl-gym" style="flex:25">Разгиб. 25′</div>
+        <div class="tl-seg tl-gym" style="flex:15">Отвед. 15′</div>
+        <div class="tl-seg tl-bike" style="flex:25">Вело 25′</div>
+        <div class="tl-seg tl-sauna" style="flex:20">Сауна 20′</div>
+      </div>
+      <div class="tl-total">120′</div>
+    </div>
+  </div>
+
+  <div class="targets-row">
+    <div class="target-card"><div class="target-val" style="color:var(--phase2)">4×</div><div class="target-label">тренировки в неделю</div></div>
+    <div class="target-card"><div class="target-val" style="color:var(--green)">120</div><div class="target-label">минут за сессию</div></div>
+    <div class="target-card"><div class="target-val" style="color:var(--phase2)">−3–5</div><div class="target-label">кг в месяц</div></div>
+    <div class="target-card"><div class="target-val" style="color:var(--phase1)">↑</div><div class="target-label">рост мышц верха тела заметен</div></div>
+  </div>
+
+  <div class="section-grid">
+
+    <div class="card">
+      <div class="card-header">
+        <div class="card-icon icon-pool"><svg width="24" height="24"><use href="#ico-pool-card" color="#3b82f6"/></svg></div>
+        <div><h3>Бассейн — расширенная программа</h3><div class="card-sub">Добавляем работу ног в воде</div></div>
+      </div>
+      <div class="card-body">
+        <div class="exercise-item">
+          <div class="ex-visual"><svg><use href="#ico-swim" color="#7a7f96"/></svg></div>
+          <div class="ex-info">
+            <div class="ex-name">Разминка + плавание кролем (умеренно)</div>
+            <div class="ex-detail">15 мин разминка в воде, затем равномерное плавание с работой ног. Вода гасит ударную нагрузку. Ориентир — нет боли в суставе.</div>
+            <div class="ex-params">
+              <span class="param-tag highlight">45 мин</span>
+              <span class="param-tag">средний темп</span>
+            </div>
+          </div>
+        </div>
+        <div class="exercise-item">
+          <div class="ex-visual"><svg><use href="#ico-leg-swing" color="#7a7f96"/></svg></div>
+          <div class="ex-info">
+            <div class="ex-name">Аквааэробика / упражнения у бортика</div>
+            <div class="ex-detail">Отведение ноги в сторону, подъём колена, круговые движения. Держась за бортик. Работает на ягодицы и бёдра без осевой нагрузки.</div>
+            <div class="ex-params">
+              <span class="param-tag highlight">25 мин · 3×15 каждое</span>
+              <span class="param-tag">без боли</span>
+            </div>
+          </div>
+        </div>
+        <div class="exercise-item">
+          <div class="ex-visual"><svg><use href="#ico-aqua" color="#7a7f96"/></svg></div>
+          <div class="ex-info">
+            <div class="ex-name">Водная ходьба с поясом для аквааэробики</div>
+            <div class="ex-detail">Пояс держит на плаву — нет нагрузки на ноги вообще. Энергичная работа руками. Кардио без сустава.</div>
+            <div class="ex-params">
+              <span class="param-tag highlight">15 мин</span>
+              <span class="param-tag">интенсивно</span>
+            </div>
+          </div>
+        </div>
+        <div class="exercise-item">
+          <div class="ex-visual"><svg><use href="#ico-sauna" color="#7a7f96"/></svg></div>
+          <div class="ex-info">
+            <div class="ex-name">Хамам + душ</div>
+            <div class="ex-detail">После бассейна. Снимает усталость суставов.</div>
+            <div class="ex-params"><span class="param-tag highlight">25 мин + 10 мин</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-header">
+        <div class="card-icon icon-gym"><svg width="24" height="24"><use href="#ico-gym-card" color="#f59e0b"/></svg></div>
+        <div><h3>Тренажёры — средняя нагрузка</h3><div class="card-sub">Верх + безопасные упражнения на ноги</div></div>
+      </div>
+      <div class="card-body">
+        <div class="exercise-item">
+          <div class="ex-visual"><svg><use href="#ico-warmup" color="#7a7f96"/></svg></div>
+          <div class="ex-info">
+            <div class="ex-name">Разминка</div>
+            <div class="ex-detail">Суставная гимнастика, вращения, лёгкая растяжка верха тела.</div>
+            <div class="ex-params"><span class="param-tag highlight">15 мин</span></div>
+          </div>
+        </div>
+        <div class="exercise-item">
+          <div class="ex-visual"><svg><use href="#ico-pulldown" color="#7a7f96"/></svg></div>
+          <div class="ex-info">
+            <div class="ex-name">Тяга верхнего блока / тяга к поясу</div>
+            <div class="ex-detail">Спина, бицепс. Сидя. Увеличиваем вес по сравнению с Фазой 1.</div>
+            <div class="ex-params">
+              <span class="param-tag highlight">20 мин · 3×10–12</span>
+              <span class="param-tag">средний вес</span>
+            </div>
+          </div>
+        </div>
+        <div class="exercise-item">
+          <div class="ex-visual"><svg><use href="#ico-leg-ext" color="#7a7f96"/></svg></div>
+          <div class="ex-info">
+            <div class="ex-name">Разгибание ног в тренажёре (сидя)</div>
+            <div class="ex-detail">Изолированная нагрузка на квадрицепс. Не нагружает тазобедренный сустав — движение только в колене.</div>
+            <div class="ex-params">
+              <span class="param-tag highlight">25 мин · 3×15</span>
+              <span class="param-tag">лёгкий вес</span>
+              <span class="param-tag">медленно</span>
+            </div>
+          </div>
+        </div>
+        <div class="exercise-item">
+          <div class="ex-visual"><svg><use href="#ico-leg-abduct" color="#7a7f96"/></svg></div>
+          <div class="ex-info">
+            <div class="ex-name">Отведение ноги в кроссовере</div>
+            <div class="ex-detail">Лёжа на боку или стоя на здоровой ноге — отведение больной ноги. Укрепляет ягодичные. Минимальная нагрузка на сустав.</div>
+            <div class="ex-params">
+              <span class="param-tag highlight">15 мин · 3×12</span>
+              <span class="param-tag">без боли</span>
+            </div>
+          </div>
+        </div>
+        <div class="exercise-item">
+          <div class="ex-visual"><svg><use href="#ico-bike" color="#7a7f96"/></svg></div>
+          <div class="ex-info">
+            <div class="ex-name">Горизонтальный велотренажёр</div>
+            <div class="ex-detail">Увеличиваем интенсивность. Сопротивление 3–4.</div>
+            <div class="ex-params">
+              <span class="param-tag highlight">25 мин</span>
+              <span class="param-tag">сопротивление 3–4</span>
+            </div>
+          </div>
+        </div>
+        <div class="exercise-item">
+          <div class="ex-visual"><svg><use href="#ico-sauna" color="#7a7f96"/></svg></div>
+          <div class="ex-info">
+            <div class="ex-name">Сауна или хамам + душ</div>
+            <div class="ex-detail">После тренажёров. Ускоряет восстановление мышц.</div>
+            <div class="ex-params"><span class="param-tag highlight">20 мин + 10 мин</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-header">
+        <div class="card-icon icon-schedule"><svg width="24" height="24"><use href="#ico-cal" color="#22c55e"/></svg></div>
+        <div><h3>Расписание недели</h3><div class="card-sub">Фаза 2 · 4 дня нагрузки · по 2 часа</div></div>
+      </div>
+      <div class="card-body">
+        <table class="schedule-table">
+          <thead><tr><th>День</th><th>Содержание</th><th>Время</th></tr></thead>
+          <tbody>
+            <tr><td><span class="day-tag day-active-2">ПН</span></td><td>Бассейн — разминка + плавание + аквааэробика + хамам</td><td style="color:var(--green);font-family:'IBM Plex Mono',monospace;font-size:11px">2 ч</td></tr>
+            <tr><td><span class="day-tag day-rest">ВТ</span></td><td>Отдых / хамам 15 мин (опц.)</td><td style="color:var(--muted);font-family:'IBM Plex Mono',monospace;font-size:11px">—</td></tr>
+            <tr><td><span class="day-tag day-active-2">СР</span></td><td>Тренажёры — разминка + верх + ноги + вело + сауна</td><td style="color:var(--green);font-family:'IBM Plex Mono',monospace;font-size:11px">2 ч</td></tr>
+            <tr><td><span class="day-tag day-rest">ЧТ</span></td><td>Отдых</td><td style="color:var(--muted);font-family:'IBM Plex Mono',monospace;font-size:11px">—</td></tr>
+            <tr><td><span class="day-tag day-active-2">ПТ</span></td><td>Бассейн — разминка + кролем + аквапояс + хамам</td><td style="color:var(--green);font-family:'IBM Plex Mono',monospace;font-size:11px">2 ч</td></tr>
+            <tr><td><span class="day-tag day-active-2">СБ</span></td><td>Тренажёры — верх тела + вело + сауна</td><td style="color:var(--green);font-family:'IBM Plex Mono',monospace;font-size:11px">2 ч</td></tr>
+            <tr><td><span class="day-tag day-rest">ВС</span></td><td>Полный отдых</td><td style="color:var(--muted);font-family:'IBM Plex Mono',monospace;font-size:11px">—</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-header">
+        <div class="card-icon icon-warn"><svg width="24" height="24"><use href="#ico-stop" color="#ef4444"/></svg></div>
+        <div><h3>Всё ещё запрещено</h3><div class="card-sub">Фаза 2 не отменяет ограничений</div></div>
+      </div>
+      <div class="card-body">
+        <ul class="info-list">
+          <li class="danger">Приседания со штангой или собственным весом</li>
+          <li class="danger">Жим ногами в тренажёре (нагрузка на сустав)</li>
+          <li class="danger">Беговая дорожка</li>
+          <li class="danger">Подъём тяжёлых весов стоя</li>
+          <li class="danger">Упражнения с вращением бедра</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-header">
+        <div class="card-icon icon-tip"><svg width="24" height="24"><use href="#ico-check" color="#22c55e"/></svg></div>
+        <div><h3>На что обратить внимание</h3><div class="card-sub">Прогресс и контроль</div></div>
+      </div>
+      <div class="card-body">
+        <ul class="info-list">
+          <li class="ok">Взвешиваться раз в неделю, утром, натощак</li>
+          <li class="ok">Квадрицепс и ягодицы — приоритет для подготовки к операции</li>
+          <li class="ok">Если сустав «лучше» — не ускоряться, держать план</li>
+          <li class="ok">Сон 7–8 часов — критичен для жиросжигания и восстановления</li>
+          <li class="danger">Боль в суставе после тренировки — сигнал снизить нагрузку</li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ═══ ФАЗА 3 ═══ -->
+<div class="phase-panel phase-3" id="panel-3">
+  <div class="progress-block">
+    <div class="progress-label"><span>Интенсивность</span><span>100%</span></div>
+    <div class="progress-bar"><div class="progress-fill fill-3"></div></div>
+  </div>
+  <div class="phase-header">
+    <div class="phase-badge">3</div>
+    <div class="phase-title-block">
+      <h2>НАГРУЗОЧНАЯ ФАЗА</h2>
+      <div class="phase-desc">Цель: максимальное жиросжигание, силовой набор верха тела, укрепление мышц-стабилизаторов вокруг сустава. Подготовка мышц к послеоперационной реабилитации.</div>
+      <div class="duration-tag">ФАЗА 3 — ДО ДАТЫ ОПЕРАЦИИ · 2 ЧАСА НА СЕССИЮ · только при отсутствии болей</div>
+    </div>
+  </div>
+
+  <div class="timeline-block">
+    <div class="timeline-title">Тайминг тренировки — 120 мин</div>
+    <div class="timeline-row">
+      <div class="tl-label">ПН/ПТ</div>
+      <div class="tl-bar-wrap">
+        <div class="tl-seg tl-pool" style="flex:15">Разм. 15′</div>
+        <div class="tl-seg tl-pool" style="flex:35">Интервалы 35′</div>
+        <div class="tl-seg tl-pool" style="flex:25">Аква 25′</div>
+        <div class="tl-seg tl-pool" style="flex:20">Бортик 20′</div>
+        <div class="tl-seg tl-sauna" style="flex:25">Хамам 25′</div>
+      </div>
+      <div class="tl-total">120′</div>
+    </div>
+    <div class="timeline-row">
+      <div class="tl-label">ВТ/ЧТ</div>
+      <div class="tl-bar-wrap">
+        <div class="tl-seg tl-gym" style="flex:15">Разм. 15′</div>
+        <div class="tl-seg tl-gym" style="flex:20">Жим лёжа 20′</div>
+        <div class="tl-seg tl-gym" style="flex:25">Тяга 25′</div>
+        <div class="tl-seg tl-gym" style="flex:15">Ноги 15′</div>
+        <div class="tl-seg tl-gym" style="flex:20">Мостик 20′</div>
+        <div class="tl-seg tl-bike" style="flex:25">Вело 25′</div>
+      </div>
+      <div class="tl-total">120′</div>
+    </div>
+    <div class="timeline-row">
+      <div class="tl-label">СБ</div>
+      <div class="tl-bar-wrap">
+        <div class="tl-seg tl-bike" style="flex:35">Вело 35′</div>
+        <div class="tl-seg tl-sauna" style="flex:60">Сауна 3×10′ + паузы 30′</div>
+        <div class="tl-seg tl-rest" style="flex:25">Вода/отдых 25′</div>
+      </div>
+      <div class="tl-total">120′</div>
+    </div>
+  </div>
+
+  <div class="targets-row">
+    <div class="target-card"><div class="target-val" style="color:var(--phase3)">5×</div><div class="target-label">тренировки в неделю</div></div>
+    <div class="target-card"><div class="target-val" style="color:var(--green)">120</div><div class="target-label">минут за сессию</div></div>
+    <div class="target-card"><div class="target-val" style="color:var(--phase3)">−4–6</div><div class="target-label">кг в месяц</div></div>
+    <div class="target-card"><div class="target-val" style="color:var(--phase2)">↑↑</div><div class="target-label">видимый прирост мышц верха</div></div>
+  </div>
+
+  <div class="section-grid">
+
+    <div class="card">
+      <div class="card-header">
+        <div class="card-icon icon-pool"><svg width="24" height="24"><use href="#ico-pool-card" color="#3b82f6"/></svg></div>
+        <div><h3>Бассейн — интенсивный блок</h3><div class="card-sub">Кардио + работа всего тела в воде</div></div>
+      </div>
+      <div class="card-body">
+        <div class="exercise-item">
+          <div class="ex-visual"><svg><use href="#ico-walk-water" color="#7a7f96"/></svg></div>
+          <div class="ex-info">
+            <div class="ex-name">Разминка в воде</div>
+            <div class="ex-detail">Ходьба по дну, вращения в воде, лёгкие махи ногами. Разогрев перед интервалами.</div>
+            <div class="ex-params"><span class="param-tag highlight">15 мин</span></div>
+          </div>
+        </div>
+        <div class="exercise-item">
+          <div class="ex-visual"><svg><use href="#ico-interval-swim" color="#7a7f96"/></svg></div>
+          <div class="ex-info">
+            <div class="ex-name">Интервальное плавание</div>
+            <div class="ex-detail">2 длины быстро → 1 длина спокойно. Повторить 8–10 раз. Сжигает жир эффективнее равномерного плавания.</div>
+            <div class="ex-params">
+              <span class="param-tag highlight">35 мин</span>
+              <span class="param-tag">интервалы</span>
+            </div>
+          </div>
+        </div>
+        <div class="exercise-item">
+          <div class="ex-visual"><svg><use href="#ico-aqua" color="#7a7f96"/></svg></div>
+          <div class="ex-info">
+            <div class="ex-name">Аквааэробика с нудлом / поясом</div>
+            <div class="ex-detail">Полная разгрузка сустава + интенсивное кардио. Бег в воде на глубине, прыжки на месте в воде (вода гасит удар), энергичные движения руками.</div>
+            <div class="ex-params">
+              <span class="param-tag highlight">25 мин</span>
+              <span class="param-tag">высокий темп</span>
+            </div>
+          </div>
+        </div>
+        <div class="exercise-item">
+          <div class="ex-visual"><svg><use href="#ico-leg-swing" color="#7a7f96"/></svg></div>
+          <div class="ex-info">
+            <div class="ex-name">Упражнения у бортика — усиленный блок</div>
+            <div class="ex-detail">Отведение, приведение, подъём колена, круговые движения — 4 упражнения × 20 повторений каждой ногой.</div>
+            <div class="ex-params">
+              <span class="param-tag highlight">20 мин · 4×20</span>
+              <span class="param-tag">контроль боли</span>
+            </div>
+          </div>
+        </div>
+        <div class="exercise-item">
+          <div class="ex-visual"><svg><use href="#ico-sauna" color="#7a7f96"/></svg></div>
+          <div class="ex-info">
+            <div class="ex-name">Хамам</div>
+            <div class="ex-detail">После бассейна. Снижает воспаление, выводит молочную кислоту.</div>
+            <div class="ex-params"><span class="param-tag highlight">25 мин</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-header">
+        <div class="card-icon icon-gym"><svg width="24" height="24"><use href="#ico-gym-card" color="#f59e0b"/></svg></div>
+        <div><h3>Тренажёры — силовой блок</h3><div class="card-sub">Верх тела + стабилизаторы</div></div>
+      </div>
+      <div class="card-body">
+        <div class="exercise-item">
+          <div class="ex-visual"><svg><use href="#ico-warmup" color="#7a7f96"/></svg></div>
+          <div class="ex-info">
+            <div class="ex-name">Разминка</div>
+            <div class="ex-detail">Суставная гимнастика, разогрев плечевого пояса.</div>
+            <div class="ex-params"><span class="param-tag highlight">15 мин</span></div>
+          </div>
+        </div>
+        <div class="exercise-item">
+          <div class="ex-visual"><svg><use href="#ico-bench-press" color="#7a7f96"/></svg></div>
+          <div class="ex-info">
+            <div class="ex-name">Жим штанги / гантелей лёжа</div>
+            <div class="ex-detail">Грудь, трицепс. Серьёзный рабочий вес. Спина зафиксирована на скамье.</div>
+            <div class="ex-params">
+              <span class="param-tag highlight">20 мин · 4×8–10</span>
+              <span class="param-tag">тяжёлый вес</span>
+            </div>
+          </div>
+        </div>
+        <div class="exercise-item">
+          <div class="ex-visual"><svg><use href="#ico-cable-row" color="#7a7f96"/></svg></div>
+          <div class="ex-info">
+            <div class="ex-name">Тяга горизонтального блока / тяга гантели</div>
+            <div class="ex-detail">Широчайшие, бицепс. Тяга гантели с упором — колено здоровой ноги на скамье, стоять не нужно.</div>
+            <div class="ex-params">
+              <span class="param-tag highlight">25 мин · 4×10–12</span>
+              <span class="param-tag">средне-тяжёлый</span>
+            </div>
+          </div>
+        </div>
+        <div class="exercise-item">
+          <div class="ex-visual"><svg><use href="#ico-leg-ext" color="#7a7f96"/></svg></div>
+          <div class="ex-info">
+            <div class="ex-name">Разгибание + сгибание ног (сидя/лёжа)</div>
+            <div class="ex-detail">Квадрицепс и бицепс бедра. Только тренажёры сидя и лёжа — нет осевой нагрузки на сустав.</div>
+            <div class="ex-params">
+              <span class="param-tag highlight">15 мин · 4×12–15</span>
+              <span class="param-tag">умеренный вес</span>
+            </div>
+          </div>
+        </div>
+        <div class="exercise-item">
+          <div class="ex-visual"><svg><use href="#ico-glute" color="#7a7f96"/></svg></div>
+          <div class="ex-info">
+            <div class="ex-name">Ягодичный мостик лёжа на полу</div>
+            <div class="ex-detail">Лёжа на спине, ноги согнуты — поднимать таз. Нет нагрузки на тазобедренный сустав в осевом направлении.</div>
+            <div class="ex-params">
+              <span class="param-tag highlight">20 мин · 3×20</span>
+              <span class="param-tag">медленно</span>
+              <span class="param-tag">можно с весом на животе</span>
+            </div>
+          </div>
+        </div>
+        <div class="exercise-item">
+          <div class="ex-visual"><svg><use href="#ico-bike" color="#7a7f96"/></svg></div>
+          <div class="ex-info">
+            <div class="ex-name">Горизонтальный велотренажёр — финальный блок</div>
+            <div class="ex-detail">Интервально: 2 мин быстро / 1 мин медленно. Или равномерно сопротивление 5–6.</div>
+            <div class="ex-params">
+              <span class="param-tag highlight">25 мин</span>
+              <span class="param-tag">сопротивление 5–6</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-header">
+        <div class="card-icon icon-sauna"><svg width="24" height="24"><use href="#ico-thermo" color="#ef4444"/></svg></div>
+        <div><h3>Сауна / Хамам — финальный протокол</h3><div class="card-sub">Максимальный вывод воды и восстановление</div></div>
+      </div>
+      <div class="card-body">
+        <div class="sauna-row">
+          <div class="sauna-num">1</div>
+          <div><div class="sauna-text"><strong>Сауна 90°C</strong> — 3 захода по 10 мин, перерыв 5 мин между заходами. Сильный вывод воды. Ускорение метаболизма.</div><div class="sauna-time">3×10 мин · 2 раза в неделю</div></div>
+        </div>
+        <div class="sauna-row">
+          <div class="sauna-num">2</div>
+          <div><div class="sauna-text"><strong>Хамам</strong> после тренировки — расслабляет всё тело, снижает воспаление вокруг сустава.</div><div class="sauna-time">20 мин · 2 раза в неделю</div></div>
+        </div>
+        <div class="sauna-row">
+          <div class="sauna-num">!</div>
+          <div><div class="sauna-text" style="color:#fca5a5">За 2 недели до операции — сауну прекратить по согласованию с врачом. Хамам можно оставить.</div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-header">
+        <div class="card-icon icon-schedule"><svg width="24" height="24"><use href="#ico-cal" color="#22c55e"/></svg></div>
+        <div><h3>Расписание недели</h3><div class="card-sub">Фаза 3 · 5 дней нагрузки · по 2 часа</div></div>
+      </div>
+      <div class="card-body">
+        <table class="schedule-table">
+          <thead><tr><th>День</th><th>Содержание</th><th>Время</th></tr></thead>
+          <tbody>
+            <tr><td><span class="day-tag day-active-3">ПН</span></td><td>Бассейн — разминка + интервалы + аквааэробика + хамам</td><td style="color:var(--green);font-family:'IBM Plex Mono',monospace;font-size:11px">2 ч</td></tr>
+            <tr><td><span class="day-tag day-active-3">ВТ</span></td><td>Тренажёры — разминка + грудь, плечи, трицепс + вело</td><td style="color:var(--green);font-family:'IBM Plex Mono',monospace;font-size:11px">2 ч</td></tr>
+            <tr><td><span class="day-tag day-rest">СР</span></td><td>Хамам 20 мин · активное восстановление</td><td style="color:var(--muted);font-family:'IBM Plex Mono',monospace;font-size:11px">—</td></tr>
+            <tr><td><span class="day-tag day-active-3">ЧТ</span></td><td>Тренажёры — разминка + спина, бицепс + мостик + ноги + вело</td><td style="color:var(--green);font-family:'IBM Plex Mono',monospace;font-size:11px">2 ч</td></tr>
+            <tr><td><span class="day-tag day-active-3">ПТ</span></td><td>Бассейн — разминка + аквааэробика + интервалы + хамам</td><td style="color:var(--green);font-family:'IBM Plex Mono',monospace;font-size:11px">2 ч</td></tr>
+            <tr><td><span class="day-tag day-active-3">СБ</span></td><td>Велотренажёр 35 мин + сауна 3×10 мин</td><td style="color:var(--green);font-family:'IBM Plex Mono',monospace;font-size:11px">2 ч</td></tr>
+            <tr><td><span class="day-tag day-rest">ВС</span></td><td>Полный отдых</td><td style="color:var(--muted);font-family:'IBM Plex Mono',monospace;font-size:11px">—</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="card full-card">
+      <div class="card-header">
+        <div class="card-icon icon-tip"><svg width="24" height="24"><use href="#ico-check" color="#22c55e"/></svg></div>
+        <div><h3>Подготовка к операции — итоговые цели</h3><div class="card-sub">Что должно быть достигнуто к дате операции</div></div>
+      </div>
+      <div class="card-body">
+        <div style="display:grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap:12px;">
+          <div>
+            <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--muted);margin-bottom:8px;letter-spacing:1px;">ТЕЛО</div>
+            <ul class="info-list">
+              <li class="ok">Снижение веса на 15–25 кг (реалистично за 3–4 месяца)</li>
+              <li class="ok">ИМТ по возможности ближе к 30 и ниже — снижает риски при операции</li>
+              <li class="ok">Видимое уменьшение отёков</li>
+            </ul>
+          </div>
+          <div>
+            <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--muted);margin-bottom:8px;letter-spacing:1px;">МЫШЦЫ</div>
+            <ul class="info-list">
+              <li class="ok">Квадрицепс — максимально укреплён (встать с кровати после операции)</li>
+              <li class="ok">Ягодичные — активны (стабилизация протеза)</li>
+              <li class="ok">Верх тела силён (ходьба на костылях 4–6 недель)</li>
+            </ul>
+          </div>
+          <div>
+            <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--muted);margin-bottom:8px;letter-spacing:1px;">ФИЗИОЛОГИЯ</div>
+            <ul class="info-list">
+              <li class="ok">Сердечно-сосудистая система адаптирована к нагрузкам</li>
+              <li class="ok">Снижен уровень хронического воспаления</li>
+              <li class="ok">Лучшая переносимость наркоза при меньшем весе</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<script>
+  function switchTab(n) {
+    document.querySelectorAll('.phase-panel').forEach(p => p.classList.remove('active'));
+    document.querySelectorAll('.tab-btn').forEach(b => b.className = 'tab-btn');
+    document.getElementById('panel-' + n).classList.add('active');
+    document.querySelectorAll('.tab-btn')[n-1].classList.add('active-' + n);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+</script>
+</body>
+</html>
