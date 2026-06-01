@@ -32,7 +32,7 @@
   .header-label { font-family: 'IBM Plex Mono', monospace; font-size: 24px; letter-spacing: 3px; color: var(--muted); text-transform: uppercase; margin-bottom: 8px; }
   header h1 { font-family: 'Bebas Neue', sans-serif; font-size: clamp(36px, 5vw, 62px); letter-spacing: 2px; line-height: 1; color: var(--accent); }
   header h1 span { color: var(--phase1); }
-  .header-sub { margin-top: 10px; font-size: 20px; color: var(--muted); max-width: 600px; line-height: 1.6; }
+  .header-sub { margin-top: 10px; font-size: 20px; font-weight: 500; color: var(--muted); max-width: 600px; line-height: 1.6; }
   .warning-box { margin-top: 18px; background: rgba(239,68,68,0.08); border: 1px solid rgba(239,68,68,0.25); border-radius: 8px; padding: 12px 16px; font-size: 27px; color: #fca5a5; line-height: 1.6; max-width: 700px; }
   .warning-box strong { color: #ef4444; }
 
@@ -55,7 +55,7 @@
   .phase-1 .phase-title-block h2 { color: var(--phase1); }
   .phase-2 .phase-title-block h2 { color: var(--phase2); }
   .phase-3 .phase-title-block h2 { color: var(--phase3); }
-  .phase-title-block .phase-desc { font-size: 20px; color: var(--muted); line-height: 1.6; max-width: 600px; }
+  .phase-title-block .phase-desc { font-size: 20px; font-weight: 500; color: var(--muted); line-height: 1.6; max-width: 600px; }
   .phase-title-block .duration-tag { display: inline-block; margin-top: 8px; padding: 3px 10px; border-radius: 20px; font-family: 'IBM Plex Mono', monospace; font-size: 24px; letter-spacing: 1px; background: var(--surface2); border: 1px solid var(--border); color: var(--muted); }
 
   .section-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 20px; margin-bottom: 28px; }
@@ -82,11 +82,11 @@
   .ex-name { font-size: 20px; font-weight: 600; color: var(--text); margin-bottom: 3px; }
   .ex-detail { font-size: 24px; color: var(--muted); line-height: 1.5; }
   .ex-params { display: flex; gap: 8px; margin-top: 5px; flex-wrap: wrap; }
-  .param-tag { padding: 2px 8px; border-radius: 4px; font-family: 'IBM Plex Mono', monospace; font-size: 22px; background: var(--surface2); border: 1px solid var(--border); color: var(--muted); }
+  .param-tag { padding: 4px 12px; border-radius: 4px; font-family: 'IBM Plex Mono', monospace; font-size: 22px; font-weight: 700; background: var(--surface2); border: 1px solid var(--border); color: var(--muted); }
   .param-tag.highlight { color: var(--green); border-color: rgba(34,197,94,0.3); background: rgba(34,197,94,0.06); }
 
   .info-list { list-style: none; }
-  .info-list li { padding: 7px 0; font-size: 20px; color: var(--text); border-bottom: 1px solid rgba(255,255,255,0.04); display: flex; align-items: flex-start; gap: 8px; line-height: 1.5; }
+  .info-list li { padding: 7px 0; font-size: 20px; font-weight: 500; color: var(--text); border-bottom: 1px solid rgba(255,255,255,0.04); display: flex; align-items: flex-start; gap: 8px; line-height: 1.5; }
   .info-list li:last-child { border-bottom: none; }
   .info-list li::before { content: '—'; color: var(--muted); flex-shrink: 0; margin-top: 1px; }
   .info-list li.danger::before { content: '✕'; color: var(--phase3); }
@@ -94,7 +94,7 @@
 
   .schedule-table { width: 100%; border-collapse: collapse; font-size: 27px; }
   .schedule-table th { font-family: 'IBM Plex Mono', monospace; font-size: 22px; letter-spacing: 1px; text-transform: uppercase; color: var(--muted); padding: 6px 10px; text-align: left; border-bottom: 1px solid var(--border); }
-  .schedule-table td { padding: 8px 10px; border-bottom: 1px solid rgba(255,255,255,0.04); color: var(--text); vertical-align: top; line-height: 1.5; }
+  .schedule-table td { padding: 10px 10px; border-bottom: 1px solid rgba(255,255,255,0.04); color: var(--text); vertical-align: top; line-height: 1.5; font-weight: 500; font-size: 20px; }
   .schedule-table tr:last-child td { border-bottom: none; }
   .day-tag { display: inline-block; padding: 2px 8px; border-radius: 4px; font-family: 'IBM Plex Mono', monospace; font-size: 22px; font-weight: 600; white-space: nowrap; }
   .day-active { background: rgba(59,130,246,0.15); color: var(--phase1); }
@@ -125,16 +125,16 @@
   .timeline-block { background: var(--surface2); border: 1px solid var(--border); border-radius: 10px; padding: 14px 16px; margin-bottom: 20px; }
   .timeline-title { font-family: 'IBM Plex Mono', monospace; font-size: 22px; letter-spacing: 2px; color: var(--muted); text-transform: uppercase; margin-bottom: 10px; }
   .timeline-row { display: flex; align-items: center; gap: 8px; margin-bottom: 6px; }
-  .tl-label { font-size: 22px; color: var(--muted); font-family: 'IBM Plex Mono', monospace; width: 36px; flex-shrink: 0; }
-  .tl-bar-wrap { flex: 1; display: flex; gap: 2px; height: 18px; }
-  .tl-seg { border-radius: 3px; display: flex; align-items: center; justify-content: center; font-size: 14px; font-family: 'IBM Plex Mono', monospace; color: rgba(255,255,255,0.7); white-space: nowrap; overflow: hidden; padding: 0 4px; }
+  .tl-label { font-size: 22px; font-weight: 700; color: var(--muted); font-family: 'IBM Plex Mono', monospace; width: 42px; flex-shrink: 0; }
+  .tl-bar-wrap { flex: 1; display: flex; gap: 2px; height: 28px; }
+  .tl-seg { border-radius: 3px; display: flex; align-items: center; justify-content: center; font-size: 15px; font-weight: 700; font-family: 'IBM Plex Mono', monospace; color: rgba(255,255,255,0.9); white-space: nowrap; overflow: hidden; padding: 0 6px; }
   .tl-pool   { background: rgba(59,130,246,0.5); }
   .tl-gym    { background: rgba(245,158,11,0.5); }
   .tl-sauna  { background: rgba(239,68,68,0.4); }
   .tl-rest   { background: rgba(122,127,150,0.15); border: 1px solid var(--border); color: var(--muted); }
   .tl-bike   { background: rgba(168,85,247,0.4); }
   .tl-walk   { background: rgba(34,197,94,0.35); }
-  .tl-total  { font-family: 'IBM Plex Mono', monospace; font-size: 22px; color: var(--green); width: 50px; text-align: right; flex-shrink: 0; }
+  .tl-total  { font-family: 'IBM Plex Mono', monospace; font-size: 22px; font-weight: 700; color: var(--green); width: 56px; text-align: right; flex-shrink: 0; }
 
   @media (max-width: 600px) {
     header, .tabs-wrapper, .phase-panel { padding-left: 20px; padding-right: 20px; }
