@@ -142,6 +142,58 @@
     .section-grid { grid-template-columns: 1fr; }
     .targets-row { grid-template-columns: 1fr 1fr; }
   }
+
+  @media (max-width: 500px) {
+    header, .phase-panel { padding-left: 14px; padding-right: 14px; }
+    .tabs-wrapper { padding-left: 8px; padding-right: 8px; }
+
+    /* Таймлайн — вертикальный на мобиле */
+    .timeline-row { flex-direction: column; gap: 4px; }
+    .tl-label { width: auto; font-size: 13px; }
+    .tl-bar-wrap { width: 100%; flex-wrap: wrap; height: auto; gap: 3px; }
+    .tl-seg { flex: none !important; width: auto !important; height: 26px; font-size: 13px; border-radius: 4px; padding: 0 8px; }
+    .tl-total { width: auto; align-self: flex-end; font-size: 16px; }
+
+    /* Прячем длинные сегменты — только метка и цвет */
+    .timeline-title { font-size: 13px; }
+
+    /* Убираем phase-badge цифру — занимает место */
+    .phase-badge { display: none; }
+
+    /* param-tag меньше */
+    .param-tag { font-size: 16px; padding: 3px 8px; }
+    .param-tag.highlight { font-size: 16px; }
+
+    /* card-icon чуть меньше */
+    .card-icon { width: 32px; height: 32px; }
+
+    /* ex-visual */
+    .ex-visual { width: 46px; height: 46px; }
+    .ex-visual svg { width: 30px; height: 30px; }
+
+    /* section grid — одна колонка */
+    .section-grid { grid-template-columns: 1fr; }
+    .targets-row { grid-template-columns: 1fr 1fr; }
+
+    /* schedule table */
+    .schedule-table { font-size: 16px; }
+    .schedule-table td { padding: 6px 6px; font-size: 16px; }
+    .schedule-table th { font-size: 13px; }
+
+    /* duration-tag */
+    .duration-tag { font-size: 15px !important; white-space: normal; }
+
+    /* progress label */
+    .progress-label { font-size: 15px; }
+
+    /* sauna */
+    .sauna-text { font-size: 16px; }
+    .sauna-time { font-size: 14px; }
+
+    /* tabs */
+    .tab-btn { font-size: 11px; padding: 8px 10px; }
+  }
+
 </style>
 </head>
 <body>
